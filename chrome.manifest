@@ -1,0 +1,8 @@
+content   columner                 chrome/content/
+skin      columner   classic/1.0   chrome/skin/
+locale    columner   en-US         chrome/locale/en-US/
+locale    columner   sv-SE         chrome/locale/sv-SE/
+locale    columner   ru-RU         chrome/locale/ru-RU/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://columner/content/ff-overlay.xul

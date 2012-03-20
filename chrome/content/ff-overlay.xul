@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://columner/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://columner/locale/overlay.dtd">
+<overlay id="columner-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+    <keyset>
+            <key id="columnerNarrow" modifiers="alt shift" key="U" oncommand="columner.Narrow()"/>
+    </keyset>
+
+    <keyset>
+            <key id="columnerWide" modifiers="alt shift" key="L" oncommand="columner.Wide()"/>
+    </keyset>
+
+</overlay>
+
