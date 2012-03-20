@@ -1,4 +1,4 @@
-columner = {
+var columner = {
 
     prefManager: Components.classes['@mozilla.org/preferences-service;1'].
             getService(Components.interfaces.nsIPrefBranch),
@@ -8,13 +8,11 @@ columner = {
     isPrefKeyboard: false,
     isShiftPressed: false,
 
-    onLoad: function() 
-    {
+    onLoad: function() {
         this.initialized = true;
     },
 
-    getPrefs: function()
-    {
+    getPrefs: function() {
         columner.isPrefMouseWheel = columner.prefManager.
             getBoolPref('extensions.columner.prefMouseWheel');
 
@@ -22,8 +20,7 @@ columner = {
             getBoolPref('extensions.columner.prefKeyboard');
     },
 
-    WrapBody: function()
-    {
+    WrapBody: function() {
         var contentWrapper = content.document.createElement('div');
         contentWrapper.id = 'columnerContentWrapper';
         
@@ -35,12 +32,11 @@ columner = {
     },
 
 
-    CreateTabNode: function()
-    {
+    CreateTabNode: function() {
         var isNodeExist = false;
 
         for (var i = 0; i < columner.tabNodes.length; i++) {
-            if (content.document.URL == columner.tabNodes[i].url) {
+            if (content.document.URL === columner.tabNodes[i].url) {
                 isNodeExist = true;
             }
         } 
@@ -59,34 +55,32 @@ columner = {
     },
 
 
-    GetTabId: function()
-    {
+    GetTabId: function() {
         for (var i = 0; i < columner.tabNodes.length; i++) {
-            if (content.document.URL == columner.tabNodes[i].url) {
+            if (content.document.URL === columner.tabNodes[i].url) {
                 return i;
             }
         } 
     },
 
 
-    Narrow: function() 
-    {
+    Narrow: function() {
         columner.getPrefs();
 
-        if (columner.isShiftPressed == true) {
+        if (columner.isShiftPressed === true) {
             columner.CreateTabNode();
             var curTab = columner.GetTabId();
             if (columner.tabNodes[curTab].columnScale > 10) { 
-                columner.tabNodes[curTab].columnScale -= 10;
+                columner.tabNodes[curTab].columnScale -= 5;
                 content.document.getElementById('columnerContentWrapper')
                 .style.width = columner.tabNodes[curTab].columnScale + '%';
             }
         } else {
-            if (columner.isPrefKeyboard != false) {
+            if (columner.isPrefKeyboard !== false) {
                 columner.CreateTabNode();
                 var curTab = columner.GetTabId();
                 if (columner.tabNodes[curTab].columnScale > 10) { 
-                    columner.tabNodes[curTab].columnScale -= 10;
+                    columner.tabNodes[curTab].columnScale -= 5;
                     content.document.getElementById('columnerContentWrapper')
                         .style.width = columner.tabNodes[curTab].columnScale + '%';
                 }
@@ -94,11 +88,10 @@ columner = {
         }
     },
 
-    Wide: function() 
-    {
+    Wide: function() {
         columner.getPrefs();
 
-        if (columner.isShiftPressed == true) {
+        if (columner.isShiftPressed === true) {
             columner.CreateTabNode();
             var curTab = columner.GetTabId();
             if (columner.tabNodes[curTab].columnScale < 100) { 
@@ -107,7 +100,7 @@ columner = {
                     .style.width = columner.tabNodes[curTab].columnScale + '%';
             }
         } else {
-            if (columner.isPrefKeyboard != false) {
+            if (columner.isPrefKeyboard !== false) {
                 columner.CreateTabNode();
                 var curTab = columner.GetTabId();
                 if (columner.tabNodes[curTab].columnScale < 100) { 
@@ -119,10 +112,9 @@ columner = {
         }
     },
 
-    mouseWheel: function(e)
-    {
+    mouseWheel: function(e) {
         e.preventDefault();
-        if (columner.isShiftPressed == true && columner.isPrefMouseWheel == true) {
+        if (columner.isShiftPressed === true && columner.isPrefMouseWheel === true) {
             if (e.detail < 0) {
                 columner.Wide();
             } else {
@@ -132,20 +124,18 @@ columner = {
     },
 
 
-    keyDown: function(e)
-    {
+    keyDown: function(e) {
         columner.getPrefs();
-        if (e.keyCode == 70 && columner.isPrefMouseWheel == true) {
+        if (e.keyCode == 16 && columner.isPrefMouseWheel == true) {
             columner.isShiftPressed = true;
             window.addEventListener('DOMMouseScroll', columner.mouseWheel, false);
         }
     },
 
 
-    keyUp: function(e)
-    {
+    keyUp: function(e) {
         columner.getPrefs();
-        if (e.keyCode == 70 && columner.isPrefMouseWheel == true) {
+        if (e.keyCode == 16 && columner.isPrefMouseWheel == true) {
             columner.isShiftPressed = false;
             window.removeEventListener('DOMMouseScroll', columner.mouseWheel, false);
         }

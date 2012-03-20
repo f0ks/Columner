@@ -4,8 +4,8 @@
 <prefwindow id="columner-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="prefMouseWheel" name="extensions.columner.prefMouseWheel" type="bool" />
-      <preference id="prefKeyboard" name="extensions.columner.prefKeyboard" type="bool" />
+      <preference id="prefMouseWheel" name="extensions.columner.prefMouseWheel" type="bool" value="true" />
+      <preference id="prefKeyboard" name="extensions.columner.prefKeyboard" type="bool" value="true" />
     </preferences>
 
       <description>
