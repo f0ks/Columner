@@ -4,17 +4,18 @@
     <em:id>columner@albertkhamidullin.freeoda.com</em:id>
     <em:type>2</em:type>
     <em:name>Columner</em:name>
-    <em:version>0.21</em:version>
+    <em:version>0.5</em:version>
     <em:creator>Albert Khamidullin</em:creator>
     <em:contributor></em:contributor>
     <em:translator>sv-SE: Mikael Hior</em:translator>
-    <em:description>Control a width of web page with keys or mouse wheel.</em:description>
+    <em:description>Control a web page width.</em:description>
+    <em:iconURL>chrome://columner/skin/columner-icon.png</em:iconURL>
     <em:optionsURL>chrome://columner/content/options.xul</em:optionsURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
         <em:minVersion>4.0b8</em:minVersion>
-        <em:maxVersion>6.*</em:maxVersion>
+        <em:maxVersion>12.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
