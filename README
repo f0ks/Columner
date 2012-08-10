@@ -3,6 +3,10 @@ This makes easier to read text blocks that are too wide.
 
 TODO:
     1. column align option
-    2. remember width after page reload
-    3. google chrome version
+
+    2. remember width after
+        - for domain
+        - for current url only
+
+    3. change keyboard shortcuts
 
