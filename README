@@ -2,11 +2,19 @@ Columner allows you to decrease a web page width, without changing a browser's w
 This makes easier to read text blocks that are too wide.
 
 TODO:
-    1. column align option
 
-    2. remember width after
-        - for domain
-        - for current url only
+Current bugs:
 
-    3. change keyboard shortcuts
+    - preferences:
+        shift+wheel starts working only after a second (shift+alt+U|L) option had enabled.
+        After disabling the second option hotkeys still working.
+
+    - if close and open a tab with same url, doesn't work any more
+
+
+New version:
+
+    1. column align option (left|center|right)
+    2. remember page width for url/domain
+    3. change keyboard shortcuts (current overrides some defaults).
 
