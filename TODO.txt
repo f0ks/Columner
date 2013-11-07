@@ -1,0 +1,6 @@
+    - create DEVEL branch
+    - create another repo for Google Chrome version
+    - Test on Window, Mac, Linux
+
+    > chose and set another keyboard/mouse shortcuts, set one by default on
+    > add align option: left|center|right

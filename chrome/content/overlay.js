@@ -67,6 +67,9 @@ var columner = {
     Narrow: function() {
         columner.getPrefs();
 
+        // loging into firefox's developer tools console (not firebug)
+        //console.log("cons");
+
         if (columner.isShiftPressed === true) {
             columner.CreateTabNode();
             var curTab = columner.GetTabId();
