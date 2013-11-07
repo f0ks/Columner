@@ -1,7 +1,7 @@
 var columner = {
 
     prefManager: Components.classes['@mozilla.org/preferences-service;1'].
-            getService(Components.interfaces.nsIPrefBranch),
+                 getService(Components.interfaces.nsIPrefBranch),
 
     tabNodes: Array(),
     isPrefMouseWheel: false,
@@ -9,7 +9,7 @@ var columner = {
     isShiftPressed: false,
 
     onLoad: function() {
-        this.initialized = true;
+        //this.initialized = true;
     },
 
     getPrefs: function() {
@@ -18,6 +18,17 @@ var columner = {
 
         columner.isPrefKeyboard = columner.prefManager.
             getBoolPref('extensions.columner.prefKeyboard');
+
+        columner.isPrefAlignLeft = columner.prefManager.
+            getBoolPref('extensions.columner.prefAlignLeft');
+
+        // having error with these two :(
+        /*
+        columner.isPrefAlignCenter = columner.prefManager.
+            getBoolPref('extensions.columner.prefAlignCenter');
+        columner.isPrefAlignRight = columner.prefManager.
+            getBoolPref('extensions.columner.prefAlignRight');
+        */
     },
 
     WrapBody: function() {
@@ -68,7 +79,9 @@ var columner = {
         columner.getPrefs();
 
         // loging into firefox's developer tools console (not firebug)
-        //console.log("cons");
+        console.log( "isLeft " + columner.isPrefAlignLeft);
+        console.log( "isCenter " + columner.isPrefAlignCenter);
+        console.log( "isRight " + columner.isPrefAlignRight);
 
         if (columner.isShiftPressed === true) {
             columner.CreateTabNode();

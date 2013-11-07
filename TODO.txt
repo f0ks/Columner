@@ -2,5 +2,5 @@
     - create another repo for Google Chrome version
     - Test on Window, Mac, Linux
 
-    > chose and set another keyboard/mouse shortcuts, set one by default on
+    > chose and set another keyboard/mouse shortcuts, set on by default (now bug)
     > add align option: left|center|right

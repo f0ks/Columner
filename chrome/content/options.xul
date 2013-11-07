@@ -6,14 +6,29 @@
     <preferences>
       <preference id="prefMouseWheel" name="extensions.columner.prefMouseWheel" type="bool" value="true" />
       <preference id="prefKeyboard" name="extensions.columner.prefKeyboard" type="bool" value="true" />
+
+      <preference id="prefAlignLeft" name="extensions.columner.prefAlignLeft" type="bool" value="false" />
+      <preference id="prefAlignCenter" name="extensions.columner.prefAlignCenter" type="bool" value="true" />
+      <preference id="prefAlignRight" name="extensions.columner.prefAlignRight" type="bool" value="false" />
+
     </preferences>
 
-      <description>
+      <description style="margin-top: 10px; font-weight: bold;">
         Keyboard shortcuts
       </description>
 
-      <checkbox id="checkboxPrefMouseWheel" preference="prefMouseWheel" label="&prefMouseWheel.label;" checked="true" />
-      <checkbox id="checkboxPrefKeyboard" preference="prefKeyboard" label="&prefKeyboard.label;" checked="true" />
+      <checkbox id="checkboxPrefMouseWheel" preference="prefMouseWheel" checked="true" label="&prefMouseWheel.label;"  />
+      <checkbox id="checkboxPrefKeyboard" preference="prefKeyboard" checked="true" label="&prefKeyboard.label;" />
+
+    <radiogroup>
+      <description style="margin-top: 10px; font-weight: bold;">
+        Column align
+      </description>
+      <radio id="opt_left" preference="prefAlignLeft"  label="Left" />
+      <radio id="opt_center" preference="prefAlignCenter" label="Center" selected="true"/>
+      <radio id="opt_right" preference="prefAlignRight" label="Right" />
+    </radiogroup>
+
   </prefpane>
 </prefwindow>
 
