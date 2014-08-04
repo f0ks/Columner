@@ -9,7 +9,14 @@ var columner = {
     isShiftPressed: false,
 
     onLoad: function() {
-        //this.initialized = true;
+        // set prefs if not yet set
+
+        try {
+            Services.prefs.getCharPref("extensions.columner.PREF_MOUSE_WHEEL");
+        } catch(e) {
+            Services.prefs.setCharPref("extensions.columner.PREF_MOUSE_WHEEL", "false");
+        }
+
     },
 
     getPrefs: function() {
